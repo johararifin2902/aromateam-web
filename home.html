@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Aromateam - Discover Your Signature Scent</title>
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+            <style>
+              html { scroll-behavior: smooth; }
+              body { margin: 0; font-family: 'Poppins', sans-serif; color: #000000; }
+              header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+              header h1 { font-family: 'Playfair Display', serif; font-size: 28px; }
+              nav a { position: relative; margin: 0 15px; text-decoration: none; color: #000; font-weight: 500; transition: color 0.3s ease; }
+              nav a::after { content: ''; position: absolute; width: 0; height: 2px; background-color: #d4af37; left: 0; bottom: -5px; transition: width 0.3s; }
+              nav a:hover { color: #d4af37; }
+              nav a:hover::after { width: 100%; }
+              .hero { background-color: #f9f7f1; text-align: center; padding: 100px 20px; }
+              .hero h2 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; }
+              .hero button { background-color: #d4af37; border: none; padding: 15px 30px; color: #fff; font-size: 16px; cursor: pointer; border-radius: 30px; transition: all 0.3s ease; }
+              .hero button:hover { background-color: #c39e32; transform: scale(1.05); }
+              .section { padding: 50px 20px; text-align: center; }
+              #shop { background: linear-gradient(to bottom, #ffffff, #f0e7d8); }
+              #kontak { background: linear-gradient(to bottom, #e8f0ff, #ffffff); }
+              .products, .testimonials { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
+              .product, .testimonial { width: 250px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background: #fafafa; }
+              .product img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+              .product h3 { font-size: 18px; margin: 10px 0 5px 0; }
+              .product p { color: #888; margin: 5px 0; }
+              .product button, .cta button { background-color: #d4af37; border: none; padding: 10px 20px; color: #fff; cursor: pointer; border-radius: 30px; transition: all 0.3s ease; }
+              .product button:hover, .cta button:hover { background-color: #c39e32; transform: scale(1.05); }
+              .about p { max-width: 600px; margin: 0 auto; font-size: 16px; color: #555; }
+              .testimonial p { font-style: italic; color: #555; }
+              .testimonial h4 { margin-top: 10px; color: #d4af37; }
+              .cta { margin-top: 30px; }
+              .cta a { text-decoration: none; }
+              footer { background-color: #000; color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 50px; }
+              #popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; animation: fadeIn 0.5s ease; }
+              @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+              #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 500; }
+              @media (max-width: 768px) {
+                .products, .testimonials { flex-direction: column; align-items: center; }
+                header { flex-direction: column; padding: 10px 20px; }
+                nav a { margin: 10px 5px; }
+              }
+            </style>
+          </head>
+      <body>
+        <header>
+          <h1>Aromateam</h1>
+          <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+
+            <a href="#kontak">Kontak</a>
+          </nav>
+        </header>
+      
+        <section class="hero" id="home">
+          <h2>Discover Your Signature Scent</h2>
+          <a href="#shop"><button>Lihat Koleksi</button></a>
+        </section>
+      
+        <section class="section" id="shop">
+          <h2>Produk Terlaris</h2>
+          <div class="products">
+            <div class="product">
+              <img src="1.jpg" alt="Pink Drops">
+              <h3>Pink Drops</h3>
+              <p>Manis & Segar</p>
+              <p>Rp 250.000</p>
+              <button onclick="orderNow('Pink Drops')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="2.jpg" alt="Luminos">
+              <h3>Luminos</h3>
+              <p>Cerah & Energik</p>
+              <p>Rp 299.000</p>
+              <button onclick="orderNow('Luminos')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="3.jpg" alt="Milk Drops">
+              <h3>Milk Drops</h3>
+              <p>Lembut & Creamy</p>
+              <p>Rp 275.000</p>
+              <button onclick="orderNow('Milk Drops')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="4.jpg" alt="Glitch">
+              <h3>Glitch</h3>
+              <p>Unik & Berani</p>
+              <p>Rp 310.000</p>
+              <button onclick="orderNow('Glitch')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="5.jpg" alt="California Signature">
+              <h3>California Signature</h3>
+              <p>Segar & Klasik</p>
+              <p>Rp 599.000</p>
+              <button onclick="orderNow('California Signature')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="6.jpg" alt="Slow Living">
+              <h3>Slow Living</h3>
+              <p>Tenang & Damai</p>
+              <p>Rp 225.000</p>
+              <button onclick="orderNow('Slow Living')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="7.jpg" alt="Rayhaan Elixir">
+              <h3>Rayhaan Elixir</h3>
+              <p>Elegan & Tahan Lama</p>
+              <p>Rp 275.000</p>
+              <button onclick="orderNow('Rayhaan Elixir')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="8.jpg" alt="John Gustav Homme">
+              <h3>John Gustav Homme</h3>
+              <p>Maskulin & Modern</p>
+              <p>Rp 325.000</p>
+              <button onclick="orderNow('John Gustav Homme')">Beli Sekarang</button>
+            </div>
+            <div class="product">
+              <img src="9.jpg" alt="Slow Living Limited">
+              <h3>Slow Living Limited</h3>
+              <p>Eksklusif & Menenangkan</p>
+              <p>Rp 250.000</p>
+              <button onclick="orderNow('Slow Living Limited')">Beli Sekarang</button>
+            </div>
+          </div>
+        </section>
+      
+        <section class="section" id="kontak">
+          <h2>Hubungi Kami</h2>
+          <p>Ingin order atau ada pertanyaan? Hubungi kami melalui:</p>
+          <div class="cta">
+            <a href="https://wa.me/6287852910498" target="_blank">
+              <button>Chat via WhatsApp</button>
+            </a>
+            <br><br>
+            <a href="mailto:johararifin290204@gmail.com">
+              <button>Email Kami</button>
+            </a>
+          </div>
+        </section>
+      
+        <!-- Popup dan Overlay -->
+        <div id="overlay"></div>
+        <div id="popup">
+          <p>Memproses pesanan Anda...</p>
+        </div>
+      
+        <footer>
+          © 2025 Aromateam. All rights reserved.
+        </footer>
+      
+        <script>
+            function orderNow(productName) {
+              document.getElementById('overlay').style.display = 'block';
+              document.getElementById('popup').style.display = 'block';
+              setTimeout(function() {
+                window.location.href = 'https://wa.me/6287852910498?text=Halo%2C+saya+mau+pesan+' + encodeURIComponent(productName);
+              }, 1200);
+            }
+          </script>
+      </body>
+      
+</html>
